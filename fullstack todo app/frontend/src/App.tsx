@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css' // Keep global styles if any, or remove if not needed
 import Todos from './features/todo/Todos'
+import Hotel from './features/hotel/Hotel'
 
 const App = () => {
     return (
@@ -20,7 +21,7 @@ const App = () => {
                     box-sizing: border-box;
                 }
             `}</style>
-            <Todos />
+            <Hotel />
         </>
     )
 }
