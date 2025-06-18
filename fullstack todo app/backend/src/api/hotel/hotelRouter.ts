@@ -8,12 +8,10 @@ interface ProductAssignment {
     id: string
     reservation_uuid: string
     name: string
-    [key: string]: any
 }
 
 interface ProductCharge {
     special_product_assignment_id: string
-    [key: string]: any
 }
 
 interface AssignmentWithCharges extends ProductAssignment {
