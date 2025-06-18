@@ -1,0 +1,97 @@
+@baseUrl = http://localhost:8080
+@todoId = 123e4567-e89b-12d3-a456-426614174000
+@userId = 1
+
+###
+# Health Check
+# Expected ServiceResponse:
+# {
+#   "success": true,
+#   "message": "Service is healthy",
+#   "responseObject": null,
+#   "statusCode": 200
+# }
+GET {{baseUrl}}/health-check
+
+###
+# Get Users
+# Expected ServiceResponse:
+# {
+#   "success": true,
+#   "message": "Users retrieved successfully",
+#   "responseObject": [ /* array of users */ ],
+#   "statusCode": 200
+# }
+GET {{baseUrl}}/users
+
+###
+# Get User by ID
+# Expected ServiceResponse:
+# {
+#   "success": true,
+#   "message": "User retrieved successfully",
+#   "responseObject": { /* user object */ },
+#   "statusCode": 200
+# }
+GET {{baseUrl}}/users/{{userId}}
+
+###
+# Create Todo
+# Expected ServiceResponse:
+# {
+#   "success": true,
+#   "message": "Todo created successfully",
+#   "responseObject": { /* new todo object */ },
+#   "statusCode": 201
+# }
+POST {{baseUrl}}/todos
+Content-Type: application/json
+
+{
+  "text": "Learn API Testing",
+  "isDone": false
+}
+
+###
+# Get Todos
+# Expected ServiceResponse:
+# {
+#   "success": true,
+#   "message": "Todos retrieved successfully",
+#   "responseObject": [ /* array of todos */ ],
+#   "statusCode": 200
+# }
+GET {{baseUrl}}/todos
+
+###
+# Get Todo by ID
+# Expected ServiceResponse:
+# {
+#   "success": true,
+#   "message": "Todo retrieved successfully",
+#   "responseObject": { /* todo object */ },
+#   "statusCode": 200
+# }
+GET {{baseUrl}}/todos/{{todoId}}
+
+###
+# Update Todo by ID
+# Expected ServiceResponse:
+# {
+#   "success": true,
+#   "message": "Todo updated successfully",
+#   "responseObject": { /* updated todo object */ },
+#   "statusCode": 200
+# }
+PUT {{baseUrl}}/todos/{{todoId}}
+Content-Type: application/json
+
+{
+  "text": "Master API Testing",
+  "isDone": true
+}
+
+###
+# Delete Todo by ID
+# Expected: Empty body, Status 204 No Content
+DELETE {{baseUrl}}/todos/{{todoId}}

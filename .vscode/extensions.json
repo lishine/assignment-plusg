@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "blanu.vscode-styled-jsx",
+    "humao.rest-client",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "vitest.explorer"
+  ]
+}
